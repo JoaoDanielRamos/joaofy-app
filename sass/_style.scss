@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgb(252, 212, 212), transparent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.heading {
+    margin-bottom: 10rem;
+    font-family: 'Palette Mosaic', cursive;
+    font-size: 3rem;
+    letter-spacing: -3px;
+    color: rgb(255, 140, 140);
+}
+
+.music-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // When music-player has the class "play" the .disc container, inside .album-cover, that is inside music-player__main-container will possess the following properties
+    &.play .music-player__main-container .album-cover .disc {
+        animation-play-state: running;
+    }
+
+    &.play .music-player__song-display {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .music-player__main-container {
+        width: 350px;
+        height: 80px;
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: 0 15px 30px rgb(245, 181, 181);
+        z-index: 5;
+
+        display: flex;
+
+        .album-cover {
+            width: 35%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .disc {
+                margin-top: -40px;
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                background: url('../assets/summer.jpg') cover no-repeat;
+                background-size: cover;
+                background-repeat: no-repeat;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                animation: rotate 3s linear infinite;
+                animation-play-state: paused;
+
+                &:after {
+                    content: '';
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: white;
+                }
+            }
+        }
+
+        .player-buttons {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+            button {
+                background: none;
+                border: none;
+                font-size: 1.8rem;
+                color: rgb(116, 116, 116);
+                cursor: pointer;
+            }
+
+            .hidden {
+                display: none;
+            }
+        }
+    }
+
+    .music-player__song-display {
+        display: flex;
+        flex-direction: column;
+        width: 330px;
+        height: 65px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        z-index: 1;
+        animation: all 0.2s;
+        padding: 0 0 0 11rem;
+        justify-content: center;
+        opacity: 0;
+        transform: translateY(60px);
+        transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+
+        .title {
+            font-family: 'Comfortaa', cursive;
+            font-weight: 600;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: rgb(85, 85, 85);
+        }
+
+        .progress-container {
+            width: 195px;
+            height: 3.5px;
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+            cursor: pointer;
+
+            .progress-bar {
+                background-color: #fe8daa;
+                border-radius: 5px;
+                height: 100%;
+                width: 0%;
+                transition: width 0.1s linear;
+            }
+        }
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

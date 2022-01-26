@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, #fcd4d4, transparent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.heading {
+  margin-bottom: 10rem;
+  font-family: 'Palette Mosaic', cursive;
+  font-size: 3rem;
+  letter-spacing: -3px;
+  color: #ff8c8c; }
+
+.music-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .music-player.play .music-player__main-container .album-cover .disc {
+    animation-play-state: running; }
+  .music-player.play .music-player__song-display {
+    transform: translateY(0);
+    opacity: 1; }
+  .music-player .music-player__main-container {
+    width: 350px;
+    height: 80px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 15px 30px #f5b5b5;
+    z-index: 5;
+    display: flex; }
+    .music-player .music-player__main-container .album-cover {
+      width: 35%;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .music-player .music-player__main-container .album-cover .disc {
+        margin-top: -40px;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background: url("../assets/summer.jpg") cover no-repeat;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: rotate 3s linear infinite;
+        animation-play-state: paused; }
+        .music-player .music-player__main-container .album-cover .disc:after {
+          content: '';
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background-color: white; }
+    .music-player .music-player__main-container .player-buttons {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly; }
+      .music-player .music-player__main-container .player-buttons button {
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        color: #747474;
+        cursor: pointer; }
+      .music-player .music-player__main-container .player-buttons .hidden {
+        display: none; }
+  .music-player .music-player__song-display {
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+    height: 65px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    z-index: 1;
+    animation: all 0.2s;
+    padding: 0 0 0 11rem;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in; }
+    .music-player .music-player__song-display .title {
+      font-family: 'Comfortaa', cursive;
+      font-weight: 600;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      color: #555555; }
+    .music-player .music-player__song-display .progress-container {
+      width: 195px;
+      height: 3.5px;
+      border-radius: 10px;
+      background-color: white;
+      cursor: pointer; }
+      .music-player .music-player__song-display .progress-container .progress-bar {
+        background-color: #fe8daa;
+        border-radius: 5px;
+        height: 100%;
+        width: 0%;
+        transition: width 0.1s linear; }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Music Player</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 class="heading">Joofy</h1>
+
+        <!-- MUSIC PLAYER -->
+        <div class="music-player" id="music-player">
+
+            <!-- SONG DISPLAY CONTAINER -->
+            <div class="music-player__song-display">
+
+                <!-- * SONG TITLE -->
+                <h4 class="title" id="title">I will always love you</h4>
+
+                <!-- * PROGRESS CONTAINER -->
+                <div class="progress-container" id="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+            </div>
+
+            <audio src="music/summer.mp3" id="audio"></audio>
+
+            <!-- MAIN CONTAINER -->
+            <div class="music-player__main-container">
+
+                <!-- * ALBUM / DISC-->
+                <div class="album-cover">
+                    <div class="disc" id="disc"></div>
+                </div>
+
+                <!-- * BUTTONS -->
+                <div class="player-buttons">
+                    <button class="previous" id="previous"><i class="fas fa-angle-double-left"></i></button>
+                    <button class="play" id="play"><i class="fas fa-play"></i></button>
+                    <button class="pause hidden" id="pause"><i class="fas fa-pause"></i></button>
+                    <button class="next" id="next"><i class="fas fa-angle-double-right"></i></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
